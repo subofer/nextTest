@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import {useRef, useState, useEffect } from "react";
+import Trabajos from '../components/experiencia/trabajos'
 
 
 export default function Home() {
@@ -8,10 +9,6 @@ export default function Home() {
   const noteInputRef = useRef();
   
   const [archivos, setArchivos] = useState([])
-  
-  useEffect(() => {
-
-  },[archivos]);
 
   function onSubmit(event) {
     event.preventDefault()
