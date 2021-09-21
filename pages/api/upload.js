@@ -30,11 +30,12 @@ export default function uploadFormFiles(req,res) {
         fs.writeFileSync(`${dest}/${filename}.txt`, f);
         fs.unlinkSync(file.path);
       })
-      .on("aborted", () => {
-        reject(res.status(500).send('Aborted'))  
-      })
+      
+      .on("aborted", () => { reject(res.status(500).send('Aborted'))  })
       .on("end", () => {
-        resolve(res.status(200).send('done'));
+        resolve(res.status(200).send('done')) ; 
+        
+      
       });
 
     await form.parse(req)
